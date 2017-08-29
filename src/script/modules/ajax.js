@@ -249,8 +249,9 @@ AN.mod['Ajax Integrator'] = { ver: 'N/A', author: '向日', fn: {
 				$d.trigger('workstart');
 
 				AN.shared('log', '正在發送回覆...');
-				$.post(location.pathname + location.search, $('#aspnetForm').serialize() + '&ctl00%24ContentPlaceHolder1%24btn_Submit.x=0&ctl00%24ContentPlaceHolder1%24btn_Submit.y=0', function(sHTML)
-				{
+				$.post(location.pathname + location.search, $('#aspnetForm').serialize() + '&ctl00%24ContentPlaceHolder1%24btn_Submit.x=0&ctl00%24ContentPlaceHolder1%24btn_Submit.y=0&ctl00%24ContentPlaceHolder1%24btn_Submit=\u5f35\u8cbc', function(sHTML)
+
+				      
 					if($.doc(sHTML).pageName() !== 'view') {
 						if(AN.util.getOptions('autoRetryAfterReplyFail')) {
 							AN.shared('log', '回覆發送失敗, 5秒後重新發送...');
